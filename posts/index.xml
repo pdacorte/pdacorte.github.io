@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on My New Hugo Site</title>
+    <title>Posts on Paulo da Corte</title>
     <link>https://pdacorte.github.io/posts/</link>
-    <description>Recent content in Posts on My New Hugo Site</description>
+    <description>Recent content in Posts on Paulo da Corte</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Aug 2022 20:17:04 +0200</lastBuildDate><atom:link href="https://pdacorte.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Aug 2022 20:56:26 +0200</lastBuildDate><atom:link href="https://pdacorte.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL_Notes</title>
+      <link>https://pdacorte.github.io/posts/sql_notes/</link>
+      <pubDate>Tue, 23 Aug 2022 20:56:26 +0200</pubDate>
+      
+      <guid>https://pdacorte.github.io/posts/sql_notes/</guid>
+      <description>Course Notes Creating a Table Notation CREATE TABLE &amp;#34;Table name&amp;#34; ( Id char(10) PRIMARY KEY, Brand char(10) NOT NULL, Type char(250) NOT NULL, Price decimal(8,2) NOT NULL, Desc Varchar(750) NULL ); Null values accept everything. Null doesn&amp;rsquo;t mean empty string (Spaces, for example)
+Inserting data into table You list all the columns that you&amp;rsquo;ll be filling and with what.
+INSERT INTO &amp;#34;Table name&amp;#34; (Id ,Brand ,Type ,Price , Desc ) VALUES (&amp;#39;123456&amp;#39; ,&amp;#39;Gucci&amp;#39; ,&amp;#39;Slippers&amp;#39; ,&amp;#39;695.</description>
+    </item>
+    
     <item>
       <title>Day 1</title>
       <link>https://pdacorte.github.io/posts/day_1/</link>

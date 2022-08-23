@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="not-ready text-sm lg:text-base" lang="en-us">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  
+  <title>SQL_Notes - Paulo da Corte</title>
+
+  
+  <meta name="theme-color" />
+  
+  <meta name="description" content="Course Notes Creating a Table Notation CREATE TABLE &#34;Table name&#34; ( Id char(10) PRIMARY KEY, Brand char(10) NOT NULL, Type char(250) NOT NULL, Price decimal(8,2) NOT NULL, Desc Varchar(750) NULL ); Null values accept everything. Null doesn&rsquo;t mean empty string (Spaces, for example)
+Inserting data into table You list all the columns that you&rsquo;ll be filling and with what.
+INSERT INTO &#34;Table name&#34; (Id ,Brand ,Type ,Price , Desc ) VALUES (&#39;123456&#39; ,&#39;Gucci&#39; ,&#39;Slippers&#39; ,&#39;695." />
+  <meta name="author" content="" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://pdacorte.github.io/main.min.css" />
+
+  
+  <script
+    defer
+    src="https://pdacorte.github.io/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+  <link
+    rel="preload"
+    as="image"
+    href="https://pdacorte.github.io/theme.png"
+  />
+
+  
+  
+  
+  
+
+  
+
+  
+  <link rel="icon" href="https://pdacorte.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://pdacorte.github.io/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.101.0" />
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="SQL_Notes" />
+<meta property="og:description" content="Course Notes Creating a Table Notation CREATE TABLE &#34;Table name&#34; ( Id char(10) PRIMARY KEY, Brand char(10) NOT NULL, Type char(250) NOT NULL, Price decimal(8,2) NOT NULL, Desc Varchar(750) NULL ); Null values accept everything. Null doesn&rsquo;t mean empty string (Spaces, for example)
+Inserting data into table You list all the columns that you&rsquo;ll be filling and with what.
+INSERT INTO &#34;Table name&#34; (Id ,Brand ,Type ,Price , Desc ) VALUES (&#39;123456&#39; ,&#39;Gucci&#39; ,&#39;Slippers&#39; ,&#39;695." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://pdacorte.github.io/posts/sql_notes/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-23T20:56:26+02:00" />
+<meta property="article:modified_time" content="2022-08-23T20:56:26+02:00" />
+
+
+  
+  <meta itemprop="name" content="SQL_Notes">
+<meta itemprop="description" content="Course Notes Creating a Table Notation CREATE TABLE &#34;Table name&#34; ( Id char(10) PRIMARY KEY, Brand char(10) NOT NULL, Type char(250) NOT NULL, Price decimal(8,2) NOT NULL, Desc Varchar(750) NULL ); Null values accept everything. Null doesn&rsquo;t mean empty string (Spaces, for example)
+Inserting data into table You list all the columns that you&rsquo;ll be filling and with what.
+INSERT INTO &#34;Table name&#34; (Id ,Brand ,Type ,Price , Desc ) VALUES (&#39;123456&#39; ,&#39;Gucci&#39; ,&#39;Slippers&#39; ,&#39;695."><meta itemprop="datePublished" content="2022-08-23T20:56:26+02:00" />
+<meta itemprop="dateModified" content="2022-08-23T20:56:26+02:00" />
+<meta itemprop="wordCount" content="1239">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SQL_Notes"/>
+<meta name="twitter:description" content="Course Notes Creating a Table Notation CREATE TABLE &#34;Table name&#34; ( Id char(10) PRIMARY KEY, Brand char(10) NOT NULL, Type char(250) NOT NULL, Price decimal(8,2) NOT NULL, Desc Varchar(750) NULL ); Null values accept everything. Null doesn&rsquo;t mean empty string (Spaces, for example)
+Inserting data into table You list all the columns that you&rsquo;ll be filling and with what.
+INSERT INTO &#34;Table name&#34; (Id ,Brand ,Type ,Price , Desc ) VALUES (&#39;123456&#39; ,&#39;Gucci&#39; ,&#39;Slippers&#39; ,&#39;695."/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a class="-translate-x-[1px] -translate-y-0.5 text-3xl font-bold" href="https://pdacorte.github.io"
+      >Paulo da Corte</a
+    >
+    <a
+      class="btn-dark ml-6 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+    ></a>
+  </div>
+
+  <a
+    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+  ></a>
+
+  <script>
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => htmlClass.remove('not-ready'), 10);
+
+    const setDark = (newDark) => {
+      metaTheme.setAttribute('content', newDark ? '#000' : '#fbfbfb');
+      htmlClass[newDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', newDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkVal = localStorage.getItem('dark');
+    setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pt-20 pb-32 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-20">
+    <h1 class="!my-0 pb-2.5">SQL_Notes</h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      <time>Aug 23, 2022</time>
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="course-notes">Course Notes</h1>
+<h2 id="creating-a-table-notation">Creating a Table Notation</h2>
+<pre tabindex="0"><code>CREATE TABLE &#34;Table name&#34;
+(
+Id char(10) PRIMARY KEY,
+Brand char(10) NOT NULL,
+Type char(250) NOT NULL,
+Price decimal(8,2) NOT NULL,
+Desc Varchar(750) NULL
+);
+</code></pre><p>Null values accept everything. Null doesn&rsquo;t mean empty string (Spaces, for example)</p>
+<h2 id="inserting-data-into-table">Inserting data into table</h2>
+<p>You list all the columns that you&rsquo;ll be filling and with what.</p>
+<pre tabindex="0"><code>INSERT INTO &#34;Table name&#34;
+(Id
+,Brand
+,Type
+,Price
+, Desc
+)
+VALUES
+(&#39;123456&#39;
+,&#39;Gucci&#39;
+,&#39;Slippers&#39;
+,&#39;695.00&#39;
+,NULL
+);
+</code></pre><h2 id="temporary-tables">Temporary Tables</h2>
+<p>Temporary tables will be deleted when the current session is terminated. They&rsquo;re good for when you want to create something faster than a real table and they&rsquo;re good for using complex queries using subsets and joins.</p>
+<pre tabindex="0"><code>CREATE TEMPORARY TABLE Sandals AS
+( 
+SELECT * 
+FROM SHOES
+WHERE shoe_type = &#39;sandals
+)
+</code></pre><h2 id="update-tables--delete-tables">Update Tables / Delete Tables</h2>
+<p>The UPDATE query is used to modify the existing records in a table. You can use the WHERE clause with UPDATE to update selected rows, otherwise all the rows would be updated.</p>
+<pre tabindex="0"><code>UPDATE table_name
+SET column1 = value1, column2 = value2, columnN = valueN
+WHERE [condition] AND/OR [conditionN];
+</code></pre><p>Update example:</p>
+<pre tabindex="0"><code>UPDATE COMPANY SET ADDRESS = &#39;Texas&#39; WHERE ID = 6; 
+</code></pre><p>Without the WHERE statement you just update all the records.</p>
+<p>Similarly, the DELETE query deletes records.</p>
+<pre tabindex="0"><code>DELETE FROM table_name 
+WHERE [condition]; 
+</code></pre><p>Using no WHERE statement would delete all records.</p>
+<p>SQL - Adding comments to SQL</p>
+<p>They&rsquo;re useful to maintain and share the code</p>
+<ul>
+<li>
+<ul>
+<li>this is a single line comment
+/* This is a
+multi line comment</li>
+</ul>
+</li>
+</ul>
+<p>*/</p>
+<h2 id="filtering-operators">Filtering Operators</h2>
+<ul>
+<li>= - Equals. eg: WHERE ProductName = &lsquo;Tofu&rsquo;;</li>
+<li>&lt;&gt; - Not equal</li>
+<li>&gt; Greater than</li>
+<li>&lt; Less than</li>
+<li>&gt;= Greater than or equal eg: WHERE UnitPrice &gt;= 5;</li>
+<li>&lt;= Less tha or equal</li>
+<li>BETWEEN - Between an inclusive range</li>
+<li>IS NULL - is a null value</li>
+</ul>
+<p>Checking for Non-Matches sometimes useful</p>
+<p>SELECT * FROM Products WHERE ProductName &lt;&gt; &lsquo;Pingo Doce&rsquo;</p>
+<p>Filtering with a range</p>
+<p>SELECT ProductName, UnitPrice, SuppliedID, UnitsInStock FROM Products WHERE UnitsInStock BETWEEN 15 AND 80;</p>
+<p>Filtering No Value - Useful for cleaning data and checking for missing records</p>
+<p>SELECT ProductName, UnitPrice, SuppliedID, UnitsInStock FROM Products WHERE ProductName IS NULL;</p>
+<h2 id="advanced-filtering">Advanced Filtering</h2>
+<h3 id="in-operator">IN Operator</h3>
+<p>Specifies a range of conditions Comma delimited list of values enclosed in ()</p>
+<p>Example: SELECT ProductID, UnitPrice, SupplierID FROM Products WHERE SupplierID IN (9, 10, 11);</p>
+<h3 id="or-operator---the-second-condition-will-not-be-evaluated-if-the-first-condition-is-met">OR Operator - The second condition will not be evaluated if the first condition is met!</h3>
+<p>Use for any rows matching the specific condition.</p>
+<p>SELECT ProductName, ProductID, UnitPrice, SupplierID, ProductName FROM Products WHERE ProductName = &lsquo;Tofu&rsquo; OR &lsquo;Konbu&rsquo;;</p>
+<h3 id="or-with-and">OR with AND</h3>
+<p>You can combine OR statements with AND statements:
+SELECT ProductID, UnitPrice, SupplierID FROM Products WHERE SupplierID = 9 OR SupplierID = 11 AND UnitPrice &gt; 15;</p>
+<h3 id="order-of-operations">Order of Operations</h3>
+<p>Can contain AND or OR operators. SQL processes AND before OR
+Use () to avoid the default order of operations</p>
+<p>NOT Operator - Excludes the specified attributes:
+SELECT * FROM Employees WHERE NOT City=&lsquo;London&rsquo; AND NOT City=&lsquo;Seattle&rsquo;;</p>
+<h2 id="wildcards">Wildcards</h2>
+<p>A wildcard is a special character used to match parts of a value. You can use a search pattern made from literal text, wildcard characters or a combination of both. It uses LIKE as an operator (though technically a predicate).</p>
+<p>LIKE/Wildcards can only be used with strings. It cannot be used for non-text datatypes.</p>
+<p>To use Wildcards use a % sign. EG:
+&lsquo;%Pizza&rsquo; - Anything ending with the word pizza
+&lsquo;Pizza%&rsquo; Grabs anything after the word pizza
+&lsquo;%Pizza%&rsquo; Grabs anything before and after the word pizza.
+&lsquo;S%E&rsquo; - Grabs anything that starts with &ldquo;S&rdquo; and ends with &ldquo;E&rdquo; (Like Sadie)</p>
+<p>&rsquo;<a href="mailto:t%25@gmail.com">t%@gmail.com</a>&rsquo; - Grabs gmail addresses that start with &ldquo;t&rdquo;</p>
+<p>Underscore (_) Wildcard - Matches a single character EG: WHERE size LIKE &lsquo;_pizza&rsquo;
+Output: spizza, mpizza</p>
+<p>Bracket [] Wildcard - Used to specify a set of characters in a specific location</p>
+<p>Downside of Wildcards - Takes longer to run (Bad performance). BEtter to use another operator if possible. Statements with wildcards will take longer to run if used at the end of search pattern.</p>
+<h2 id="sorting-with-order-by">Sorting with ORDER BY</h2>
+<p>Sorting data logically helps keep information you want on top.
+ORDER BY clause allows the user to sort data by particular columns</p>
+<p>SELECT something FROM database ORDER BY characteristic</p>
+<p>Rules for ORDER BY
+Takes the name of one or more columns (via additional columns).
+It can sort by a column not retrieved.
+Must always be the last clause in a select statement</p>
+<p>Sorting by Column Position
+ORDER BY 2,3 (2 means 2nd column, 3 means 3rd) You could also just use the actual column name.</p>
+<p>Sorting by Direction
+DESC descending or ASC ascending order - Only applies to the column names it directly precedes, unless you specify a column.</p>
+<h2 id="math-operators">Math Operators</h2>
+<p>The basic ones + - * /
+EG: SELECT Product ID, UnitsOnOrder, UnitPrice, UnitsOnOrder * UnitPrice AS Total_Order_Cost FROM PRODUCTS (AS creates an alias for a new column).
+In the usual order of operations () first.
+SELECT ProductID, Quantity, UnitPrice, Discount, (UnitPrice - Discount) /Quantity AS Total_Cost FROM OrderDetails;</p>
+<h2 id="aggregate-functions">Aggregate Functions</h2>
+<p>These functions help summarize our data. These are:
+AVG() - Rows containing NULL Values are ignored by the AVERAGE function SELECT AVG(UnitPrice) AS avg_price FROM products
+COUNT() - SELECT COUNT(<em>) AS total_customers  FROM Customers; - this counts the number of rows in a table (Incl. NULL values) You can choose a column to count, but this excludes NULL values.
+MIN() - NULL values are ignored by the MIN and MAX functions.
+MAX() SELECT MAX(UnitPrice) AS max_prod_price, MIN(UnitPrice) AS min_prod_price FROM Products
+SUM() - Can use with math operators. SELECT SUM(UnitPrice</em>UnitsInStock) AS total_price FROM Products WHERE SupplierID = 23;</p>
+<p>Using DISTINCT on Aggregate Functions
+If DISTINCT is not specified ALL is assumed. Cannot use DISTINCT on COUNT(*)</p>
+<p>DISTINCT returns only unique values. It&rsquo;s good to remove duplicate values.
+EG: SELECT COUNT(DISTINCT CustomerID) FROM Customers</p>
+<h2 id="grouping-data-with-sql">Grouping Data with SQL</h2>
+<p>Grouping Example - Counts customers after group on region rather than counting the whole table.</p>
+<p>SELECT Region, COUNT(CustomerID) AS total_customers FROM Customers GROUP BY Region;</p>
+<p>Additional GROUP BY Information</p>
+<p>GROUP BY clauses can contain multiple columns.</p>
+<p>Every column in your SELECT statement must be present in a GROUP BY clause, except for aggregated calculations</p>
+<p>NULLs will be grouped together if your column contains NULLs</p>
+<p>Having Clause - Filtering for Groups</p>
+<p>WHERE does not work for groups as it filters on ROWS, not COLUMNS</p>
+<p>Instead use the HAVING clause to filter for groups</p>
+<p>Grouping example: Select all customers with more than 2 orders.
+SELECT CustomerID, COUNT (<em>) AS orders FROM Orders GROUP BY CustomerID HAVING COUNT (</em>) &gt;= 2;</p>
+<p>WHERE vs. HAVING</p>
+<p>WHERE filters before data is grouped</p>
+<p>HAVING filters after data is grouped</p>
+<p>Rows eliminated by the WHERE clause will not be included in the group</p>
+<p>ORDER BY with GROUP BY</p>
+<p>ORDER BY sorts data, GROUP BY does not sort data. It&rsquo;s good practice to always use ORDER BY when using GROUP BY to avoid messy results.</p>
+<p>eg: SELECT SupplierID, COUNT(<em>) AS Num_Prod FROM Products WHERE UnitPrice &gt;= 4 GROUP BY SupplierID HAVING COUNT (</em>) &gt;=2;</p>
+<p>Note: Filtering is Useful (Increases Performance, narrows results, helps understand data with specific values, range and blank values)</p>
+<h2 id="key-sql-clauses-in-order">Key SQL Clauses (In order)</h2>
+<pre tabindex="0"><code>SELECT - Columns or expressions to be returned
+FROM - Table from which to retrieve data
+WHERE - Row-level filtering
+GROUP BY - Group specification
+HAVING  - Group-level filter
+ORDER BY - Output sort order
+ 
+SELECT DISTINCT AlbumId, COUNT(TrackId) AS TrackNum
+FROM Tracks
+GROUP BY AlbumId
+HAVING TrackNum &gt;= 12
+</code></pre><h2 id="subqueries">Subqueries</h2>
+</section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end p-6 pl-3 no-underline"
+      href="https://pdacorte.github.io/posts/day_1/"
+      ><span>Day 1</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60">
+  <div class="mr-auto">
+    &copy; 2022
+    <a class="link" href="https://pdacorte.github.io">Paulo da Corte</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank">Powered by Hugo️️</a
+  >️
+  <a class="link" href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank"
+    >Placeholder theme</a
+  >
+</footer>
+
+  </body>
+</html>
