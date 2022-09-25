@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Paulo da Corte</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Aug 2022 20:56:26 +0200</lastBuildDate><atom:link href="https://pdacorte.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Sep 2022 00:18:39 +0200</lastBuildDate><atom:link href="https://pdacorte.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day_3</title>
+      <link>https://pdacorte.github.io/posts/day_3/</link>
+      <pubDate>Mon, 26 Sep 2022 00:18:39 +0200</pubDate>
+      
+      <guid>https://pdacorte.github.io/posts/day_3/</guid>
+      <description>Day 3 Blog Not being as consistent as I should with my reading and writing. It is hard to stay productive when there are so many distractions, which are satisfying but end up undermining true progress.</description>
+    </item>
+    
     <item>
       <title>SQL_Notes</title>
       <link>https://pdacorte.github.io/posts/sql_notes/</link>
