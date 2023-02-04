@@ -30,7 +30,7 @@
   
   <meta name="theme-color" />
   
-  <meta name="description" content="Course Notes Creating a Table Notation CREATE TABLE &#34;Table name&#34; ( Id char(10) PRIMARY KEY, Brand char(10) NOT NULL, Type char(250) NOT NULL, Price decimal(8,2) NOT NULL, Desc Varchar(750) NULL ); Null values accept everything. Null doesn&rsquo;t mean empty string (Spaces, for example)
+  <meta name="description" content="Course Notes Course Notes Creating a Table Notation CREATE TABLE &#34;Table name&#34; ( Id char(10) PRIMARY KEY, Brand char(10) NOT NULL, Type char(250) NOT NULL, Price decimal(8,2) NOT NULL, Desc Varchar(750) NULL ); Null values accept everything. Null doesn&rsquo;t mean empty string (Spaces, for example)
 Inserting data into table You list all the columns that you&rsquo;ll be filling and with what.
 INSERT INTO &#34;Table name&#34; (Id ,Brand ,Type ,Price , Desc ) VALUES (&#39;123456&#39; ,&#39;Gucci&#39; ,&#39;Slippers&#39; ,&#39;695." />
   <meta name="author" content="" />
@@ -88,7 +88,7 @@ INSERT INTO &#34;Table name&#34; (Id ,Brand ,Type ,Price , Desc ) VALUES (&#39;1
   
   
   <meta property="og:title" content="SQL_Notes" />
-<meta property="og:description" content="Course Notes Creating a Table Notation CREATE TABLE &#34;Table name&#34; ( Id char(10) PRIMARY KEY, Brand char(10) NOT NULL, Type char(250) NOT NULL, Price decimal(8,2) NOT NULL, Desc Varchar(750) NULL ); Null values accept everything. Null doesn&rsquo;t mean empty string (Spaces, for example)
+<meta property="og:description" content="Course Notes Course Notes Creating a Table Notation CREATE TABLE &#34;Table name&#34; ( Id char(10) PRIMARY KEY, Brand char(10) NOT NULL, Type char(250) NOT NULL, Price decimal(8,2) NOT NULL, Desc Varchar(750) NULL ); Null values accept everything. Null doesn&rsquo;t mean empty string (Spaces, for example)
 Inserting data into table You list all the columns that you&rsquo;ll be filling and with what.
 INSERT INTO &#34;Table name&#34; (Id ,Brand ,Type ,Price , Desc ) VALUES (&#39;123456&#39; ,&#39;Gucci&#39; ,&#39;Slippers&#39; ,&#39;695." />
 <meta property="og:type" content="article" />
@@ -98,16 +98,16 @@ INSERT INTO &#34;Table name&#34; (Id ,Brand ,Type ,Price , Desc ) VALUES (&#39;1
 
   
   <meta itemprop="name" content="SQL_Notes">
-<meta itemprop="description" content="Course Notes Creating a Table Notation CREATE TABLE &#34;Table name&#34; ( Id char(10) PRIMARY KEY, Brand char(10) NOT NULL, Type char(250) NOT NULL, Price decimal(8,2) NOT NULL, Desc Varchar(750) NULL ); Null values accept everything. Null doesn&rsquo;t mean empty string (Spaces, for example)
+<meta itemprop="description" content="Course Notes Course Notes Creating a Table Notation CREATE TABLE &#34;Table name&#34; ( Id char(10) PRIMARY KEY, Brand char(10) NOT NULL, Type char(250) NOT NULL, Price decimal(8,2) NOT NULL, Desc Varchar(750) NULL ); Null values accept everything. Null doesn&rsquo;t mean empty string (Spaces, for example)
 Inserting data into table You list all the columns that you&rsquo;ll be filling and with what.
 INSERT INTO &#34;Table name&#34; (Id ,Brand ,Type ,Price , Desc ) VALUES (&#39;123456&#39; ,&#39;Gucci&#39; ,&#39;Slippers&#39; ,&#39;695."><meta itemprop="datePublished" content="2022-08-23T20:56:26+02:00" />
 <meta itemprop="dateModified" content="2022-08-23T20:56:26+02:00" />
-<meta itemprop="wordCount" content="1239">
+<meta itemprop="wordCount" content="2518">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="SQL_Notes"/>
-<meta name="twitter:description" content="Course Notes Creating a Table Notation CREATE TABLE &#34;Table name&#34; ( Id char(10) PRIMARY KEY, Brand char(10) NOT NULL, Type char(250) NOT NULL, Price decimal(8,2) NOT NULL, Desc Varchar(750) NULL ); Null values accept everything. Null doesn&rsquo;t mean empty string (Spaces, for example)
+<meta name="twitter:description" content="Course Notes Course Notes Creating a Table Notation CREATE TABLE &#34;Table name&#34; ( Id char(10) PRIMARY KEY, Brand char(10) NOT NULL, Type char(250) NOT NULL, Price decimal(8,2) NOT NULL, Desc Varchar(750) NULL ); Null values accept everything. Null doesn&rsquo;t mean empty string (Spaces, for example)
 Inserting data into table You list all the columns that you&rsquo;ll be filling and with what.
 INSERT INTO &#34;Table name&#34; (Id ,Brand ,Type ,Price , Desc ) VALUES (&#39;123456&#39; ,&#39;Gucci&#39; ,&#39;Slippers&#39; ,&#39;695."/>
 
@@ -195,6 +195,7 @@ INSERT INTO &#34;Table name&#34; (Id ,Brand ,Type ,Price , Desc ) VALUES (&#39;1
   </header>
 
   <section><h1 id="course-notes">Course Notes</h1>
+<h1 id="course-notes-1">Course Notes</h1>
 <h2 id="creating-a-table-notation">Creating a Table Notation</h2>
 <pre tabindex="0"><code>CREATE TABLE &#34;Table name&#34;
 (
@@ -338,15 +339,15 @@ EG: SELECT COUNT(DISTINCT CustomerID) FROM Customers</p>
 <p>Instead use the HAVING clause to filter for groups</p>
 <p>Grouping example: Select all customers with more than 2 orders.
 SELECT CustomerID, COUNT (<em>) AS orders FROM Orders GROUP BY CustomerID HAVING COUNT (</em>) &gt;= 2;</p>
-<p>WHERE vs. HAVING</p>
+<h2 id="where-vs-having">WHERE vs. HAVING</h2>
 <p>WHERE filters before data is grouped</p>
 <p>HAVING filters after data is grouped</p>
 <p>Rows eliminated by the WHERE clause will not be included in the group</p>
-<p>ORDER BY with GROUP BY</p>
+<h2 id="order-by-with-group-by">ORDER BY with GROUP BY</h2>
 <p>ORDER BY sorts data, GROUP BY does not sort data. It&rsquo;s good practice to always use ORDER BY when using GROUP BY to avoid messy results.</p>
 <p>eg: SELECT SupplierID, COUNT(<em>) AS Num_Prod FROM Products WHERE UnitPrice &gt;= 4 GROUP BY SupplierID HAVING COUNT (</em>) &gt;=2;</p>
 <p>Note: Filtering is Useful (Increases Performance, narrows results, helps understand data with specific values, range and blank values)</p>
-<h2 id="key-sql-clauses-in-order">Key SQL Clauses (In order)</h2>
+<h2 id="key-sql-clauses-in-order-">Key SQL Clauses (In order) !!</h2>
 <pre tabindex="0"><code>SELECT - Columns or expressions to be returned
 FROM - Table from which to retrieve data
 WHERE - Row-level filtering
@@ -359,6 +360,172 @@ FROM Tracks
 GROUP BY AlbumId
 HAVING TrackNum &gt;= 12
 </code></pre><h2 id="subqueries">Subqueries</h2>
+<h3 id="what-are-subqueries">What are Subqueries?</h3>
+<p>Subqueries are queries embedded into other queries.</p>
+<p>Relational databases store data in multiple tables.</p>
+<p>Subqueries merge data from multiple sources together and they help with adding other filtering criteria.</p>
+<p>An example would be: We need to know the region each customer is from who has had an order with freight over 100.</p>
+<p>The issue her is that this data is in two different tables.</p>
+<p>Subquery example (Note - **Always perform the innermost SELECT portion first):</p>
+<pre tabindex="0"><code>SELECT 
+CustomerID
+, CompanyName
+, Region
+FROM Customers
+WHERE customerID in (SELECT 
+customerID
+    FROM Orders
+    WHERE Freight &gt; 100 );
+</code></pre><h2 id="subqueries-best-practices-and-considerations">Subqueries Best Practices and Considerations</h2>
+<p>There is <strong>no limit</strong> to the number of subqueries you can have.</p>
+<p><strong>Performance slows</strong> when yuo nest too deeply</p>
+<p>Subquery selects can only <strong>retrieve a single column</strong> (Hence why they&rsquo;re used in filtering so much)</p>
+<h3 id="subquery-in-subquery">Subquery in Subquery</h3>
+<p>Note: Indentation is super important for readable subqueries!</p>
+<ol>
+<li>Order numbers for toothbrushes</li>
+<li>Customer ID&rsquo;s for those orders</li>
+<li>Customer information for those orders</li>
+</ol>
+<pre tabindex="0"><code>SELECT Customer_name, Customer_contact
+FROM Customers
+WHERE cust_id IN 
+    SELECT customer_id
+    FROM Orders
+    WHERE order number IN (SELECT order_number
+        FROM OrderItems
+        WHERE prod_name = &#39;Toothbrush&#39;);
+</code></pre><p>A good wesite for this is PoorSQL. This is a website that will pre-format code, uses proper indenting and this makes the code easier to read and troubleshoot.</p>
+<h3 id="subqueries-for-calculations">Subqueries for Calculations</h3>
+<p>Total number of orders placed by every customer</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Customer_name</th>
+<th style="text-align:center">Customer_state</th>
+<th style="text-align:center">Orders</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Becky</td>
+<td style="text-align:center">IA</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">Nita</td>
+<td style="text-align:center">CA</td>
+<td style="text-align:center">6</td>
+</tr>
+<tr>
+<td style="text-align:center">Raj</td>
+<td style="text-align:center">OH</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">Steve</td>
+<td style="text-align:center">AZ</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+<pre tabindex="0"><code>SELECT COUNT (*) AS orders
+FROM Orders
+WHERE customer_id = &#39;143569&#39;;
+
+SELECT customer_name
+    ,customer_state
+    (SELECT COUNT (*) AS orders
+    FROM Orders
+    WHERE Orders.customer_id = Customer.customer_id) AS orders
+FROM customers
+ORDER BY Customer_name
+</code></pre><h1 id="joining-tables-introduction">Joining Tables Introduction</h1>
+<h2 id="benefits-of-breaking-data-into-tables">Benefits of Breaking Data into Tables</h2>
+<ul>
+<li>Efficient storage</li>
+<li>Easier manipulation</li>
+<li>Greater scalability</li>
+<li>Logically models a process</li>
+<li>Tables are related through common values (keys)</li>
+</ul>
+<h2 id="joins">Joins</h2>
+<p>Associate correct records from each table on the fly</p>
+<p>Allows data retrieval from multiple tables in one query</p>
+<p>Joins are not physical - they persist for the duration of the query execution (!)</p>
+<p>Result: Ensure that duplicates aren&rsquo;t bloating results.</p>
+<h2 id="cartesian-joins-cross-joins">Cartesian Joins (Cross Joins)</h2>
+<p>Coss joins: Each row from the first table joins with all the rows of another table</p>
+<p>This is computationally taxing.</p>
+<p><code> SELECT product_name , unit_price , company_name FROM supplies CROSS JOIN products;</code></p>
+<p>The cross join is used to generate all combinations of records in two tables. For example if you combine a meals table with a drinks table, you&rsquo;ll get all possible combinations of meals and drinks.</p>
+<p>The output will be the number of joins in the first table multiplied by the number of rows in the second table.</p>
+<h2 id="inner-joins-most-important">Inner Joins (Most Important)</h2>
+<p>The INNER JOIN keyword selects records that have matching values in both tables</p>
+<p><code>SELECT suppliers.CompanyName , ProductName , UnitPrice FROM Suppliers INNER JOIN Products  ON Suppliers.supplierid = Products.supplierid</code></p>
+<p>The join condition is in the FROM clause and uses the ON clause.</p>
+<p>Joining more tables together affects overall database performance.</p>
+<p>You can join multiple tables, no limit.</p>
+<p>List all the tables, then define conditions.</p>
+<h3 id="inner-join-with-multiple-tables">Inner Join with Multiple Tables</h3>
+<p>It&rsquo;s good to prequalify the data and pose it in a logical fashion (o = order, c = company, e = employee, etc)
+<code>SELECT o.OrderID, c.CompanyName, e.LastName FROM ((Orders o INNER JOIN Customers c ON o.CustomerID = c.CustomerID) INNER JOIN Employees e ON o.EmployeeID = e.EmployeeID);</code></p>
+<h3 id="best-practices-with-joins">Best Practices with Joins</h3>
+<ul>
+<li>Make sure you are pre-qualifying names</li>
+<li>Do not make unnecessary joins</li>
+<li>Think about the type of join you are making</li>
+<li>How are you connecting records?</li>
+</ul>
+<h2 id="aliases-and-self-joins">Aliases and Self Joins</h2>
+<p>We use aliases when aggregating a field e.g creating an alias so that we know what to call the new value. It makes the columns more readable.</p>
+<p>An alias gives a table or a column a temporary name (duration of the query). For this we use the AS keyword.</p>
+<p>Example:
+<code>SELECT vendor_name ,product_name ,product_price FROM Vendors AS v, Products AS p WHERE v.vendor_id = p.vendor.id;</code></p>
+<h3 id="self-joins">Self Joins</h3>
+<p>We want to match customers from the same city. We take the table and treat it like two separate tables.</p>
+<p>Example:
+<code>SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City FROM Customers A, Customers B WHERE A.CustomerID = B.CustomerID AND A.City = B.City ORDER BY A.City;</code></p>
+<h2 id="advanced-joins-left-right-and-full-outer-joins">Advanced Joins: Left, Right, and Full Outer Joins</h2>
+<p>Note: SQL Lite only does Left Joins</p>
+<h3 id="left-join-outer">Left Join (Outer)</h3>
+<p>Note: This differs from inner joins since unmatched records return NULL!</p>
+<p>Returns all records from the left table (table 1), and the matched records from the right table (table 2). The result is NULL from the right side, if there is no match.</p>
+<p>An example would be a table 1 of customers and a table 2 of orders. You&rsquo;d get all customers and, if they had an order, include that data there.</p>
+<p><code>SELECT C.CustomerName, O.OrderID FROM Customers C LEFT JOIN Orders O ON C.CustomerID = O.CustomerID ORDER BY C.CustomerName;</code>
+<code>SELECT column_name(s) FROM table1 LEFT JOIN table2 ON table1.column_name = table2.column_name;</code></p>
+<h3 id="right-join-outer">Right Join (Outer)</h3>
+<p>Returns all records from the right table (table 2), and the matched records from the left table. The result is NULL from the left side, if there is no match.</p>
+<p>The table you list first is acted upon according to the type of join you use. Left joins can be turned into right joins by reversing the order of the tables.</p>
+<p><code>SELECT Orders.OrdedrID, Employees.LastName, Employees.FirstName FROM Orders RIGHT JOIN Employees ON  Orders.EmployeeID =  Employees.EmployeeID ORDER BY Orders.OrderID;</code>
+Inuition is bolstered by repetition.</p>
+<h3 id="full-outer-join">Full Outer Join</h3>
+<p>Return all records when there is a match in either left (table 1) or right (table 2) table records.</p>
+<p>If there is no match, they will not be returned.</p>
+<p><code>SELECT Customers.CustomerName, Orders.OrderID FROM Customers FULL OUTER JOIN Orders ON  Customers.CustomerID =  Orders.CustomerID ORDER BY Customers.CustomerName;</code></p>
+<h2 id="unions">Unions</h2>
+<p>A UNION is used to combine the result-set of two or more SELECT statements.</p>
+<p>Each SELECT statement within UNION must have the same number of columns.</p>
+<p>The columns must have <strong>similar data types</strong>.</p>
+<p>The columns in each SELECT statement must be in the <strong>same order</strong>.</p>
+<p>Example 1 - Basic Union Setup:
+<code>SELECT column_name(s) FROM table1 UNION SELECT column_name(s) FROM table2;</code></p>
+<p>Example 2 - Which German cities have suppliers
+<code>SELECT City, Country FROM Customers WHERE Country='Germany'  UNION SELECT City, Country FROM Suppliers WHERE Country='Germany' ORDER BY City;</code></p>
+<h2 id="union-all">Union All</h2>
+<p>The UNION ALL command is equal to the UNION command, except that UNION ALL selects all values. UNION ALL will not eliminate duplicate rows, instead it just pulls all rows from all tables fitting your query specifics and combines them into a table.</p>
+<h2 id="subqueries-vs-joins">Subqueries vs Joins</h2>
+<p>Both subqueries and joins are capable of returning results from complex tables. However, they have different purposes.</p>
+<p>Where subqueries chain statements to return a value based on its equivalent in another table, joins make a single table with all the relevant information and are faster to execute.</p>
+<p>Same data example in both - Taken from Part 3 Quiz</p>
+<h3 id="subquery">Subquery</h3>
+<p><code>SELECT AlbumId ,Name ,UnitPrice FROM Tracks WHERE AlbumId IN ( SELECT AlbumId FROM albums WHERE ArtistId IN ( SELECT ArtistId FROM artists WHERE ArtistId = 8 ) )</code></p>
+<h3 id="join-inner-basic">Join (Inner Basic)</h3>
+<p><code>SELECT albums.Title ,tracks.UnitPrice FROM albums INNER JOIN tracks ON albums.AlbumId = tracks.AlbumId WHERE albums.ArtistId IN ( SELECT ArtistId FROM artists WHERE Name = 'Audioslave' )</code></p>
+<p><code>SELECT customers.FirstName ,customers.LastName ,customers.CustomerId ,invoices.InvoiceId FROM customers INNER JOIN invoices ON customers.CustomerId = invoices.CustomerId WHERE invoices.InvoiceId IS NULL</code></p>
+<p><code>SELECT albums.Title ,tracks.AlbumId ,SUM(tracks.UnitPrice) FROM tracks INNER JOIN albums ON tracks.AlbumId = albums.AlbumId WHERE albums.Title = 'Big Ones' GROUP BY tracks.AlbumId</code></p>
+<h3 id="join-inner-multiple-tables">Join (Inner Multiple Tables)</h3>
+<p><code>SELECT artists.Name ,albums.Title ,tracks.UnitPrice FROM ( ( albums INNER JOIN tracks ON albums.AlbumId = tracks.AlbumId ) INNER JOIN artists ON artists.ArtistId = albums.ArtistId ) WHERE albums.ArtistId IN ( SELECT ArtistId FROM artists WHERE Name = 'Audioslave' )</code></p>
 </section>
 
   
@@ -370,7 +537,7 @@ HAVING TrackNum &gt;= 12
   <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
     
     <a class="flex w-1/2 items-center p-6 pr-3 no-underline" href="https://pdacorte.github.io/posts/day_3/"
-      ><span class="mr-1.5">←</span><span>Day_3</span></a
+      ><span class="mr-1.5">←</span><span>Day 3</span></a
     >
     
     
