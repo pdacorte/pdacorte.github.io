@@ -32,7 +32,7 @@ The quote that stuck with me from yesterday was &amp;ldquo;Your mind is mde for 
       <pubDate>Wed, 01 Feb 2023 03:31:11 +0100</pubDate>
       
       <guid>https://pdacorte.github.io/posts/gumption_building/</guid>
-      <description>Building Gumption I&amp;rsquo;ve got a new computer and a whole new setup.
+      <description>New Machine I&amp;rsquo;ve got a new computer and a whole new setup.
 I have to admit, at first I thought that building a computer was a dumb idea due to the added stress and risk. I did think that way all the way through my initial problems, such as misconnected motherboard cables, but once he was fully set up, I fell in love with this thing I built. The fact that it functions far beyond what I expected is only the cherry on top.</description>
     </item>
     
@@ -42,17 +42,18 @@ I have to admit, at first I thought that building a computer was a dumb idea due
       <pubDate>Mon, 26 Sep 2022 00:18:39 +0200</pubDate>
       
       <guid>https://pdacorte.github.io/posts/day_3/</guid>
-      <description>Day 3 Blog Not being as consistent as I should with my reading and writing. It is hard to stay productive when there are so many distractions, which are satisfying but end up undermining true progress.
+      <description>Not being as consistent as I should with my reading and writing. It is hard to stay productive when there are so many distractions, which are satisfying but end up undermining true progress.
 It&amp;rsquo;s good to push something, even if small.</description>
     </item>
     
     <item>
-      <title>SQL_Notes</title>
+      <title>Notes Taken on a SQL Course</title>
       <link>https://pdacorte.github.io/posts/sql_notes/</link>
       <pubDate>Tue, 23 Aug 2022 20:56:26 +0200</pubDate>
       
       <guid>https://pdacorte.github.io/posts/sql_notes/</guid>
-      <description>Course Notes Course Notes Creating a Table Notation CREATE TABLE &amp;#34;Table name&amp;#34; ( Id char(10) PRIMARY KEY, Brand char(10) NOT NULL, Type char(250) NOT NULL, Price decimal(8,2) NOT NULL, Desc Varchar(750) NULL ); Null values accept everything. Null doesn&amp;rsquo;t mean empty string (Spaces, for example)
+      <description>I take notes using Jupyter Notebooks, so this blog format is ideal.
+Creating a Table Notation CREATE TABLE &amp;#34;Table name&amp;#34; ( Id char(10) PRIMARY KEY, Brand char(10) NOT NULL, Type char(250) NOT NULL, Price decimal(8,2) NOT NULL, Desc Varchar(750) NULL ); Null values accept everything. Null doesn&amp;rsquo;t mean empty string (Spaces, for example)
 Inserting data into table You list all the columns that you&amp;rsquo;ll be filling and with what.
 INSERT INTO &amp;#34;Table name&amp;#34; (Id ,Brand ,Type ,Price , Desc ) VALUES (&amp;#39;123456&amp;#39; ,&amp;#39;Gucci&amp;#39; ,&amp;#39;Slippers&amp;#39; ,&amp;#39;695.</description>
     </item>
@@ -63,7 +64,8 @@ INSERT INTO &amp;#34;Table name&amp;#34; (Id ,Brand ,Type ,Price , Desc ) VALUES
       <pubDate>Wed, 10 Aug 2022 20:17:04 +0200</pubDate>
       
       <guid>https://pdacorte.github.io/posts/day_1/</guid>
-      <description>Is this some kind of subheader Is it all just rendered markdown. Kinda okay for a blog I guess. Fast and stuff.
+      <description>Hey, a blog that uses markdown!
+Is this some kind of subheader Markdown is good. Fast and stuff.
 I wonder what this looks like Or is it too small
 Subheader 3 Listicle sauce fantastic import sauce for s in sauce: eat the sauce print(s) </description>
     </item>
