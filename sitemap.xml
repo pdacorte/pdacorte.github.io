@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://pdacorte.github.io/posts/midmarch/</loc>
-    <lastmod>2023-03-20T23:21:00+01:00</lastmod>
+    <loc>https://pdacorte.github.io/posts/distraction/</loc>
+    <lastmod>2023-04-01T18:23:19+02:00</lastmod>
   </url><url>
     <loc>https://pdacorte.github.io/</loc>
-    <lastmod>2023-03-20T23:21:00+01:00</lastmod>
+    <lastmod>2023-04-01T18:23:19+02:00</lastmod>
   </url><url>
     <loc>https://pdacorte.github.io/posts/</loc>
+    <lastmod>2023-04-01T18:23:19+02:00</lastmod>
+  </url><url>
+    <loc>https://pdacorte.github.io/posts/midmarch/</loc>
     <lastmod>2023-03-20T23:21:00+01:00</lastmod>
   </url><url>
     <loc>https://pdacorte.github.io/posts/early_march/</loc>
