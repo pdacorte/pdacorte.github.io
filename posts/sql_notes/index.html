@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 
 
 
@@ -6,149 +6,133 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<html class="not-ready text-sm lg:text-base" lang="en-us">
-  <head>
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="en-us"
+  dir="ltr"
+><head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
 
   
-  <title>Notes Taken on a SQL Course - Paulo da Corte</title>
+  <title>Notes Taken on a SQL Course-Paulo da Corte</title>
 
   
   <meta name="theme-color" />
-  
+
   <meta name="description" content="I take notes using Jupyter Notebooks, so this blog format is ideal.
-Creating a Table Notation CREATE TABLE &#34;Table name&#34; ( Id char(10) PRIMARY KEY, Brand char(10) NOT NULL, Type char(250) NOT NULL, Price decimal(8,2) NOT NULL, Desc Varchar(750) NULL ); Null values accept everything. Null doesn&rsquo;t mean empty string (Spaces, for example)
+Creating a Table Notation CREATE TABLE &#34;Table name&#34;(Id char(10) PRIMARY KEY,Brand char(10) NOT NULL,Type char(250) NOT NULL,Price decimal(8,2) NOT NULL,Desc Varchar(750) NULL); Null values accept everything. Null doesn&rsquo;t mean empty string (Spaces, for example)
 Inserting data into table You list all the columns that you&rsquo;ll be filling and with what.
-INSERT INTO &#34;Table name&#34; (Id ,Brand ,Type ,Price , Desc ) VALUES (&#39;123456&#39; ,&#39;Gucci&#39; ,&#39;Slippers&#39; ,&#39;695." />
-  <meta name="author" content="" />
+INSERT INTO &#34;Table name&#34;(Id,Brand,Type,Price, Desc)VALUES(&#39;123456&#39;,&#39;Gucci&#39;,&#39;Slippers&#39;,&#39;695." />
+  <meta name="author" content="Paulo da Corte" /><link rel="preload stylesheet" as="style" href="https://pdacorte.github.io/main.min.css" />
+
+  
+  <link rel="preload" as="image" href="https://pdacorte.github.io/theme.png" />
+
   
 
   
-  
-  
-  
-  
-  
-  <link rel="preload stylesheet" as="style" href="https://pdacorte.github.io/main.min.css" />
 
-  
   <script
     defer
     src="https://pdacorte.github.io/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
-  
 
-  
-  
   
   <link
-    rel="preload"
-    as="image"
-    href="https://pdacorte.github.io/theme.png"
+    rel="icon"
+    href="https://pdacorte.github.io/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://pdacorte.github.io/apple-touch-icon.png"
   />
 
-  
-  
-  
-  
-
-  
-
-  
-  <link rel="icon" href="https://pdacorte.github.io/favicon.ico" />
-  <link rel="apple-touch-icon" href="https://pdacorte.github.io/apple-touch-icon.png" />
-
-  
-  <meta name="generator" content="Hugo 0.110.0">
-
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <meta property="og:title" content="Notes Taken on a SQL Course" />
-<meta property="og:description" content="I take notes using Jupyter Notebooks, so this blog format is ideal.
-Creating a Table Notation CREATE TABLE &#34;Table name&#34; ( Id char(10) PRIMARY KEY, Brand char(10) NOT NULL, Type char(250) NOT NULL, Price decimal(8,2) NOT NULL, Desc Varchar(750) NULL ); Null values accept everything. Null doesn&rsquo;t mean empty string (Spaces, for example)
+  <meta name="generator" content="Hugo 0.110.0"><meta itemprop="name" content="Notes Taken on a SQL Course">
+<meta itemprop="description" content="I take notes using Jupyter Notebooks, so this blog format is ideal.
+Creating a Table Notation CREATE TABLE &#34;Table name&#34;(Id char(10) PRIMARY KEY,Brand char(10) NOT NULL,Type char(250) NOT NULL,Price decimal(8,2) NOT NULL,Desc Varchar(750) NULL); Null values accept everything. Null doesn&rsquo;t mean empty string (Spaces, for example)
 Inserting data into table You list all the columns that you&rsquo;ll be filling and with what.
-INSERT INTO &#34;Table name&#34; (Id ,Brand ,Type ,Price , Desc ) VALUES (&#39;123456&#39; ,&#39;Gucci&#39; ,&#39;Slippers&#39; ,&#39;695." />
+INSERT INTO &#34;Table name&#34;(Id,Brand,Type,Price, Desc)VALUES(&#39;123456&#39;,&#39;Gucci&#39;,&#39;Slippers&#39;,&#39;695."><meta itemprop="datePublished" content="2022-08-23T20:56:26+02:00" />
+<meta itemprop="dateModified" content="2022-08-23T20:56:26+02:00" />
+<meta itemprop="wordCount" content="2526">
+<meta itemprop="keywords" content="" /><meta property="og:title" content="Notes Taken on a SQL Course" />
+<meta property="og:description" content="I take notes using Jupyter Notebooks, so this blog format is ideal.
+Creating a Table Notation CREATE TABLE &#34;Table name&#34;(Id char(10) PRIMARY KEY,Brand char(10) NOT NULL,Type char(250) NOT NULL,Price decimal(8,2) NOT NULL,Desc Varchar(750) NULL); Null values accept everything. Null doesn&rsquo;t mean empty string (Spaces, for example)
+Inserting data into table You list all the columns that you&rsquo;ll be filling and with what.
+INSERT INTO &#34;Table name&#34;(Id,Brand,Type,Price, Desc)VALUES(&#39;123456&#39;,&#39;Gucci&#39;,&#39;Slippers&#39;,&#39;695." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://pdacorte.github.io/posts/sql_notes/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-08-23T20:56:26+02:00" />
 <meta property="article:modified_time" content="2022-08-23T20:56:26+02:00" />
-
-  
-  <meta itemprop="name" content="Notes Taken on a SQL Course">
-<meta itemprop="description" content="I take notes using Jupyter Notebooks, so this blog format is ideal.
-Creating a Table Notation CREATE TABLE &#34;Table name&#34; ( Id char(10) PRIMARY KEY, Brand char(10) NOT NULL, Type char(250) NOT NULL, Price decimal(8,2) NOT NULL, Desc Varchar(750) NULL ); Null values accept everything. Null doesn&rsquo;t mean empty string (Spaces, for example)
-Inserting data into table You list all the columns that you&rsquo;ll be filling and with what.
-INSERT INTO &#34;Table name&#34; (Id ,Brand ,Type ,Price , Desc ) VALUES (&#39;123456&#39; ,&#39;Gucci&#39; ,&#39;Slippers&#39; ,&#39;695."><meta itemprop="datePublished" content="2022-08-23T20:56:26+02:00" />
-<meta itemprop="dateModified" content="2022-08-23T20:56:26+02:00" />
-<meta itemprop="wordCount" content="2526">
-<meta itemprop="keywords" content="" />
-  
-  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Notes Taken on a SQL Course"/>
 <meta name="twitter:description" content="I take notes using Jupyter Notebooks, so this blog format is ideal.
-Creating a Table Notation CREATE TABLE &#34;Table name&#34; ( Id char(10) PRIMARY KEY, Brand char(10) NOT NULL, Type char(250) NOT NULL, Price decimal(8,2) NOT NULL, Desc Varchar(750) NULL ); Null values accept everything. Null doesn&rsquo;t mean empty string (Spaces, for example)
+Creating a Table Notation CREATE TABLE &#34;Table name&#34;(Id char(10) PRIMARY KEY,Brand char(10) NOT NULL,Type char(250) NOT NULL,Price decimal(8,2) NOT NULL,Desc Varchar(750) NULL); Null values accept everything. Null doesn&rsquo;t mean empty string (Spaces, for example)
 Inserting data into table You list all the columns that you&rsquo;ll be filling and with what.
-INSERT INTO &#34;Table name&#34; (Id ,Brand ,Type ,Price , Desc ) VALUES (&#39;123456&#39; ,&#39;Gucci&#39; ,&#39;Slippers&#39; ,&#39;695."/>
+INSERT INTO &#34;Table name&#34;(Id,Brand,Type,Price, Desc)VALUES(&#39;123456&#39;,&#39;Gucci&#39;,&#39;Slippers&#39;,&#39;695."/>
 
-  
-  
+  <link rel="canonical" href="https://pdacorte.github.io/posts/sql_notes/" />
 </head>
-
-  <body class="text-black duration-200 ease-out dark:text-white">
-    <header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
-  <div class="relative z-50 mr-auto flex items-center">
-    <a class="-translate-x-[1px] -translate-y-0.5 text-3xl font-bold" href="https://pdacorte.github.io"
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://pdacorte.github.io"
       >Paulo da Corte</a
     >
-    <a
-      class="btn-dark ml-6 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
-    ></a>
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
   </div>
 
-  <a
-    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
-  ></a>
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
 
   <script>
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    
     const htmlClass = document.documentElement.classList;
-    setTimeout(() => htmlClass.remove('not-ready'), 10);
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
 
-    const setDark = (newDark) => {
-      metaTheme.setAttribute('content', newDark ? '#000' : '#fbfbfb');
-      htmlClass[newDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', newDark);
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
     };
 
     
     const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    const darkVal = localStorage.getItem('dark');
-    setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
 
     
     darkScheme.addEventListener('change', (event) => {
@@ -160,43 +144,18 @@ INSERT INTO &#34;Table name&#34; (Id ,Brand ,Type ,Price , Desc ) VALUES (&#39;1
     btnDark.addEventListener('click', () => {
       setDark(localStorage.getItem('dark') !== 'true');
     });
-
-    
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
   </script>
 
   <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
   >
-    
-    
-
-    
   </div>
 </header>
-
-
-    <main
-      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pt-20 pb-32 dark:prose-invert"
-    >
-      
-
-<article>
-  <header class="mb-20">
-    <h1 class="!my-0 pb-2.5">Notes Taken on a SQL Course</h1>
-
-    
-    <div class="text-sm opacity-60">
-      
-      <time>Aug 23, 2022</time>
-      
-      
-    </div>
-    
-  </header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">Notes Taken on a SQL Course</h1><div class="text-xs antialiased opacity-60"><time>Aug 23, 2022</time></div></header>
 
   <section><p>I take notes using Jupyter Notebooks, so this blog format is ideal.</p>
 <h2 id="creating-a-table-notation">Creating a Table Notation</h2>
@@ -460,19 +419,19 @@ ORDER BY Customer_name
 <h2 id="cartesian-joins-cross-joins">Cartesian Joins (Cross Joins)</h2>
 <p>Coss joins: Each row from the first table joins with all the rows of another table</p>
 <p>This is computationally taxing.</p>
-<p><code> SELECT product_name , unit_price , company_name FROM supplies CROSS JOIN products;</code></p>
+<p><code> SELECT product_name , unit_price , company_name FROM supplies CROSS JOIN products;</code></p>
 <p>The cross join is used to generate all combinations of records in two tables. For example if you combine a meals table with a drinks table, you&rsquo;ll get all possible combinations of meals and drinks.</p>
 <p>The output will be the number of joins in the first table multiplied by the number of rows in the second table.</p>
 <h2 id="inner-joins-most-important">Inner Joins (Most Important)</h2>
 <p>The INNER JOIN keyword selects records that have matching values in both tables</p>
-<p><code>SELECT suppliers.CompanyName , ProductName , UnitPrice FROM Suppliers INNER JOIN Products  ON Suppliers.supplierid = Products.supplierid</code></p>
+<p><code> SELECT suppliers.CompanyName , ProductName , UnitPrice FROM Suppliers INNER JOIN Products  ON Suppliers.supplierid = Products.supplierid </code></p>
 <p>The join condition is in the FROM clause and uses the ON clause.</p>
 <p>Joining more tables together affects overall database performance.</p>
 <p>You can join multiple tables, no limit.</p>
 <p>List all the tables, then define conditions.</p>
 <h3 id="inner-join-with-multiple-tables">Inner Join with Multiple Tables</h3>
 <p>It&rsquo;s good to prequalify the data and pose it in a logical fashion (o = order, c = company, e = employee, etc)
-<code>SELECT o.OrderID, c.CompanyName, e.LastName FROM ((Orders o INNER JOIN Customers c ON o.CustomerID = c.CustomerID) INNER JOIN Employees e ON o.EmployeeID = e.EmployeeID);</code></p>
+<code> SELECT o.OrderID, c.CompanyName, e.LastName FROM ((Orders o INNER JOIN Customers c ON o.CustomerID = c.CustomerID) INNER JOIN Employees e ON o.EmployeeID = e.EmployeeID); </code></p>
 <h3 id="best-practices-with-joins">Best Practices with Joins</h3>
 <ul>
 <li>Make sure you are pre-qualifying names</li>
@@ -484,37 +443,37 @@ ORDER BY Customer_name
 <p>We use aliases when aggregating a field e.g creating an alias so that we know what to call the new value. It makes the columns more readable.</p>
 <p>An alias gives a table or a column a temporary name (duration of the query). For this we use the AS keyword.</p>
 <p>Example:
-<code>SELECT vendor_name ,product_name ,product_price FROM Vendors AS v, Products AS p WHERE v.vendor_id = p.vendor.id;</code></p>
+<code> SELECT vendor_name ,product_name ,product_price FROM Vendors AS v, Products AS p WHERE v.vendor_id = p.vendor.id; </code></p>
 <h3 id="self-joins">Self Joins</h3>
 <p>We want to match customers from the same city. We take the table and treat it like two separate tables.</p>
 <p>Example:
-<code>SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City FROM Customers A, Customers B WHERE A.CustomerID = B.CustomerID AND A.City = B.City ORDER BY A.City;</code></p>
+<code> SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City FROM Customers A, Customers B WHERE A.CustomerID = B.CustomerID AND A.City = B.City ORDER BY A.City; </code></p>
 <h2 id="advanced-joins-left-right-and-full-outer-joins">Advanced Joins: Left, Right, and Full Outer Joins</h2>
 <p>Note: SQL Lite only does Left Joins</p>
 <h3 id="left-join-outer">Left Join (Outer)</h3>
 <p>Note: This differs from inner joins since unmatched records return NULL!</p>
 <p>Returns all records from the left table (table 1), and the matched records from the right table (table 2). The result is NULL from the right side, if there is no match.</p>
 <p>An example would be a table 1 of customers and a table 2 of orders. You&rsquo;d get all customers and, if they had an order, include that data there.</p>
-<p><code>SELECT C.CustomerName, O.OrderID FROM Customers C LEFT JOIN Orders O ON C.CustomerID = O.CustomerID ORDER BY C.CustomerName;</code>
-<code>SELECT column_name(s) FROM table1 LEFT JOIN table2 ON table1.column_name = table2.column_name;</code></p>
+<p><code> SELECT C.CustomerName, O.OrderID FROM Customers C LEFT JOIN Orders O ON C.CustomerID = O.CustomerID ORDER BY C.CustomerName; </code>
+<code> SELECT column_name(s) FROM table1 LEFT JOIN table2 ON table1.column_name = table2.column_name; </code></p>
 <h3 id="right-join-outer">Right Join (Outer)</h3>
 <p>Returns all records from the right table (table 2), and the matched records from the left table. The result is NULL from the left side, if there is no match.</p>
 <p>The table you list first is acted upon according to the type of join you use. Left joins can be turned into right joins by reversing the order of the tables.</p>
-<p><code>SELECT Orders.OrdedrID, Employees.LastName, Employees.FirstName FROM Orders RIGHT JOIN Employees ON  Orders.EmployeeID =  Employees.EmployeeID ORDER BY Orders.OrderID;</code>
+<p><code> SELECT Orders.OrdedrID, Employees.LastName, Employees.FirstName FROM Orders RIGHT JOIN Employees ON  Orders.EmployeeID =  Employees.EmployeeID ORDER BY Orders.OrderID; </code>
 Inuition is bolstered by repetition.</p>
 <h3 id="full-outer-join">Full Outer Join</h3>
 <p>Return all records when there is a match in either left (table 1) or right (table 2) table records.</p>
 <p>If there is no match, they will not be returned.</p>
-<p><code>SELECT Customers.CustomerName, Orders.OrderID FROM Customers FULL OUTER JOIN Orders ON  Customers.CustomerID =  Orders.CustomerID ORDER BY Customers.CustomerName;</code></p>
+<p><code> SELECT Customers.CustomerName, Orders.OrderID FROM Customers FULL OUTER JOIN Orders ON  Customers.CustomerID =  Orders.CustomerID ORDER BY Customers.CustomerName; </code></p>
 <h2 id="unions">Unions</h2>
 <p>A UNION is used to combine the result-set of two or more SELECT statements.</p>
 <p>Each SELECT statement within UNION must have the same number of columns.</p>
 <p>The columns must have <strong>similar data types</strong>.</p>
 <p>The columns in each SELECT statement must be in the <strong>same order</strong>.</p>
 <p>Example 1 - Basic Union Setup:
-<code>SELECT column_name(s) FROM table1 UNION SELECT column_name(s) FROM table2;</code></p>
+<code> SELECT column_name(s) FROM table1 UNION SELECT column_name(s) FROM table2; </code></p>
 <p>Example 2 - Which German cities have suppliers
-<code>SELECT City, Country FROM Customers WHERE Country='Germany'  UNION SELECT City, Country FROM Suppliers WHERE Country='Germany' ORDER BY City;</code></p>
+<code> SELECT City, Country FROM Customers WHERE Country='Germany'  UNION SELECT City, Country FROM Suppliers WHERE Country='Germany' ORDER BY City; </code></p>
 <h2 id="union-all">Union All</h2>
 <p>The UNION ALL command is equal to the UNION command, except that UNION ALL selects all values. UNION ALL will not eliminate duplicate rows, instead it just pulls all rows from all tables fitting your query specifics and combines them into a table.</p>
 <h2 id="subqueries-vs-joins">Subqueries vs Joins</h2>
@@ -522,53 +481,37 @@ Inuition is bolstered by repetition.</p>
 <p>Where subqueries chain statements to return a value based on its equivalent in another table, joins make a single table with all the relevant information and are faster to execute.</p>
 <p>Same data example in both - Taken from Part 3 Quiz</p>
 <h3 id="subquery">Subquery</h3>
-<p><code>SELECT AlbumId ,Name ,UnitPrice FROM Tracks WHERE AlbumId IN ( SELECT AlbumId FROM albums WHERE ArtistId IN ( SELECT ArtistId FROM artists WHERE ArtistId = 8 ) )</code></p>
+<p><code> SELECT AlbumId ,Name ,UnitPrice FROM Tracks WHERE AlbumId IN ( SELECT AlbumId FROM albums WHERE ArtistId IN ( SELECT ArtistId FROM artists WHERE ArtistId = 8 ) ) </code></p>
 <h3 id="join-inner-basic">Join (Inner Basic)</h3>
-<p><code>SELECT albums.Title ,tracks.UnitPrice FROM albums INNER JOIN tracks ON albums.AlbumId = tracks.AlbumId WHERE albums.ArtistId IN ( SELECT ArtistId FROM artists WHERE Name = 'Audioslave' )</code></p>
-<p><code>SELECT customers.FirstName ,customers.LastName ,customers.CustomerId ,invoices.InvoiceId FROM customers INNER JOIN invoices ON customers.CustomerId = invoices.CustomerId WHERE invoices.InvoiceId IS NULL</code></p>
-<p><code>SELECT albums.Title ,tracks.AlbumId ,SUM(tracks.UnitPrice) FROM tracks INNER JOIN albums ON tracks.AlbumId = albums.AlbumId WHERE albums.Title = 'Big Ones' GROUP BY tracks.AlbumId</code></p>
+<p><code> SELECT albums.Title ,tracks.UnitPrice FROM albums INNER JOIN tracks ON albums.AlbumId = tracks.AlbumId WHERE albums.ArtistId IN ( SELECT ArtistId FROM artists WHERE Name = 'Audioslave' ) </code></p>
+<p><code> SELECT customers.FirstName ,customers.LastName ,customers.CustomerId ,invoices.InvoiceId FROM customers INNER JOIN invoices ON customers.CustomerId = invoices.CustomerId WHERE invoices.InvoiceId IS NULL </code></p>
+<p><code> SELECT albums.Title ,tracks.AlbumId ,SUM(tracks.UnitPrice) FROM tracks INNER JOIN albums ON tracks.AlbumId = albums.AlbumId WHERE albums.Title = 'Big Ones' GROUP BY tracks.AlbumId </code></p>
 <h3 id="join-inner-multiple-tables">Join (Inner Multiple Tables)</h3>
-<p><code>SELECT artists.Name ,albums.Title ,tracks.UnitPrice FROM ( ( albums INNER JOIN tracks ON albums.AlbumId = tracks.AlbumId ) INNER JOIN artists ON artists.ArtistId = albums.ArtistId ) WHERE albums.ArtistId IN ( SELECT ArtistId FROM artists WHERE Name = 'Audioslave' )</code></p>
+<p><code> SELECT artists.Name ,albums.Title ,tracks.UnitPrice FROM ( ( albums INNER JOIN tracks ON albums.AlbumId = tracks.AlbumId ) INNER JOIN artists ON artists.ArtistId = albums.ArtistId ) WHERE albums.ArtistId IN ( SELECT ArtistId FROM artists WHERE Name = 'Audioslave' ) </code></p>
 </section>
 
-  
-  
-
-  
-  
-  
-  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
-    
-    <a class="flex w-1/2 items-center p-6 pr-3 no-underline" href="https://pdacorte.github.io/posts/day_3/"
-      ><span class="mr-1.5">←</span><span>Day 3</span></a
-    >
-    
-    
-    <a
-      class="ml-auto flex w-1/2 items-center justify-end p-6 pl-3 no-underline"
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a class="ltr:pr-3 rtl:pl-3" href="https://pdacorte.github.io/posts/day_3/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Day 3</span></a
+    ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
       href="https://pdacorte.github.io/posts/day_1/"
-      ><span>Day 1</span><span class="ml-1.5">→</span></a
-    >
-    
-  </nav>
-  
-
-  
-  
-</article>
-
-
-    </main>
-
-    <footer class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60">
-  <div class="mr-auto">
-    &copy; 2025
-    <a class="link" href="https://pdacorte.github.io">Paulo da Corte</a>
-  </div>
-  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank">Powered by Hugo️️</a
+      ><span>Day 1</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2025<a class="link" href="https://pdacorte.github.io">Paulo da Corte</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
   >️
-
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
 </footer>
-
-  </body>
+</body>
 </html>
