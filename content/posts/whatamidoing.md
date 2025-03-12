@@ -1,5 +1,5 @@
 ---
-title: "Whatamidoing"
+title: "What Am I Doing"
 date: 2025-03-12T00:40:25+01:00
 draft: false
 ---
