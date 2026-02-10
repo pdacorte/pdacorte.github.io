@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Building a Portfolio with Vanilla HTML, CSS & JS",
+    "date": "2026-02-10",
+    "file": "building-a-portfolio.md",
+    "summary": "A walkthrough of how I built this portfolio website using nothing but vanilla web technologies — no frameworks, no build tools, just the fundamentals.",
+    "tags": ["web", "tutorial"]
+  },
+  {
+    "title": "Getting Started with Markdown Blogging",
+    "date": "2026-02-05",
+    "file": "getting-started-with-markdown.md",
+    "summary": "An introduction to writing blog posts in Markdown and how this simple format makes publishing content fast and enjoyable.",
+    "tags": ["markdown", "writing"]
+  }
+]
