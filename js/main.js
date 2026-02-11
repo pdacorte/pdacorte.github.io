@@ -117,10 +117,10 @@
    */
   function getPageTitle(page) {
     var map = {
-      home: 'Your Name - Portfolio',
-      about: 'About - Your Name',
-      blog: 'Blog - Your Name',
-      post: 'Post - Your Name',
+      home: 'Paulo da Corte - Portfolio',
+      about: 'About - Paulo da Corte',
+      blog: 'Blog - Paulo da Corte',
+      post: 'Blog Post - Paulo da Corte',
     };
     return map[page] || map.home;
   }
