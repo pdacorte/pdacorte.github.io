@@ -10,8 +10,12 @@
   'use strict';
 
   // ---- Configuration ----
-  var TRANSITION_MS = 200; // fade out/in duration (match CSS)
+  var TRANSITION_MS = 120; // page enter duration (match CSS)
   var currentRoute = null;
+  var activeNavigationId = 0;
+  var partialCache = {};
+  var partialPromises = {};
+  var suppressNextHashChange = false;
 
   // ---- Theme ----
   function getStoredTheme() {
@@ -129,9 +133,38 @@
    * Fetch a page partial's HTML content.
    */
   async function fetchPartial(path) {
-    var response = await fetch(path);
-    if (!response.ok) throw new Error('Failed to load ' + path);
-    return response.text();
+    if (partialCache[path]) return partialCache[path];
+    if (partialPromises[path]) return partialPromises[path];
+
+    partialPromises[path] = (async function () {
+      try {
+        var response = await fetch(path);
+        if (!response.ok) throw new Error('Failed to load ' + path);
+
+        var html = await response.text();
+        partialCache[path] = html;
+        return html;
+      } finally {
+        delete partialPromises[path];
+      }
+    })();
+
+    return partialPromises[path];
+  }
+
+  function shouldAnimateTransitions() {
+    if (typeof window.matchMedia !== 'function') return true;
+    return !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  function queuePageInit(route, navigationId) {
+    setTimeout(function () {
+      if (navigationId !== activeNavigationId) return;
+
+      initPage(route).catch(function (err) {
+        console.error('Page init error:', err);
+      });
+    }, 0);
   }
 
   /**
@@ -149,20 +182,21 @@
       return;
     }
 
+    var navigationId = ++activeNavigationId;
+
     var app = document.getElementById('app');
     if (!app) return;
 
-    // Phase 1: Fade out current content (skip on initial load)
-    if (!isInitial) {
-      app.classList.add('page-exit');
-      await sleep(TRANSITION_MS);
-    }
+    var shouldAnimate = (!isInitial && shouldAnimateTransitions());
+    var partialPromise = fetchPartial(getPartialPath(route.page));
 
-    // Phase 2: Fetch and inject new content
+    // Phase 1: Fetch and inject new content
     try {
-      var html = await fetchPartial(getPartialPath(route.page));
+      var html = await partialPromise;
+      if (navigationId !== activeNavigationId) return;
       app.innerHTML = html;
     } catch (err) {
+      if (navigationId !== activeNavigationId) return;
       console.error('Navigation error:', err);
       app.innerHTML = '<div class="empty-state"><h3>Page not found</h3><p><a href="#/">Go home</a></p></div>';
     }
@@ -172,20 +206,27 @@
     document.title = getPageTitle(route.page);
     highlightActiveNav(route.page);
 
-    // Phase 4: Run page-specific init
-    await initPage(route);
-
-    // Phase 5: Fade in new content
+    // Phase 3: Fade in new content as soon as partial HTML is ready
     app.classList.remove('page-exit');
-    app.classList.add('page-enter');
+    if (shouldAnimate) {
+      app.classList.add('page-enter');
+
+      // Remove animation class after it completes
+      setTimeout(function () {
+        if (navigationId !== activeNavigationId) return;
+        app.classList.remove('page-enter');
+      }, TRANSITION_MS + 80);
+    } else {
+      app.classList.remove('page-enter');
+    }
 
     // Scroll to top
-    window.scrollTo(0, 0);
+    if (window.scrollY > 0) {
+      window.scrollTo(0, 0);
+    }
 
-    // Remove animation class after it completes
-    setTimeout(function () {
-      app.classList.remove('page-enter');
-    }, TRANSITION_MS + 200);
+    // Phase 4: Run page-specific init after next paint (keeps interactions snappy)
+    queuePageInit(route, navigationId);
   }
 
   /**
@@ -205,12 +246,6 @@
         break;
       // home and about are static -- no JS init needed
     }
-  }
-
-  function sleep(ms) {
-    return new Promise(function (resolve) {
-      setTimeout(resolve, ms);
-    });
   }
 
   // ---- Active Nav Highlighting ----
@@ -249,8 +284,9 @@
       sidebar.classList.add('open');
       if (overlay) {
         overlay.style.display = 'block';
-        overlay.offsetHeight; // trigger reflow
-        overlay.classList.add('active');
+        window.requestAnimationFrame(function () {
+          overlay.classList.add('active');
+        });
       }
       document.body.style.overflow = 'hidden';
     }
@@ -293,6 +329,38 @@
     });
   }
 
+  function preloadPartials() {
+    var pages = ['home', 'about', 'blog', 'post'];
+
+    pages.forEach(function (page) {
+      fetchPartial(getPartialPath(page)).catch(function () {
+        // Ignore preload errors; normal navigation will handle failures.
+      });
+    });
+  }
+
+  function preloadPageData() {
+    if (typeof window.BlogPage !== 'undefined' && typeof window.BlogPage.preload === 'function') {
+      window.BlogPage.preload();
+    }
+
+    if (typeof window.PostPage !== 'undefined' && typeof window.PostPage.preload === 'function') {
+      window.PostPage.preload();
+    }
+  }
+
+  function schedulePreload() {
+    var run = function () {
+      preloadPageData();
+    };
+
+    if (typeof window.requestIdleCallback === 'function') {
+      window.requestIdleCallback(run);
+    } else {
+      setTimeout(run, 1500);
+    }
+  }
+
   // ---- Intercept internal link clicks for SPA navigation ----
   function setupLinkInterception() {
     document.addEventListener('click', function (e) {
@@ -307,7 +375,9 @@
         e.preventDefault();
         // Update hash (which triggers hashchange -> navigate)
         if (window.location.hash !== href) {
+          suppressNextHashChange = true;
           window.location.hash = href;
+          navigate(false);
         } else {
           // Same hash -- force re-navigate (e.g., clicking current page)
           navigate(false);
@@ -325,14 +395,23 @@
 
     // If no hash present, set default
     if (!window.location.hash || window.location.hash === '#') {
+      suppressNextHashChange = true;
       window.location.hash = '#/';
     }
 
     // Initial page load
+    preloadPartials();
     navigate(true);
+
+    // Warm up route/data caches outside the interaction path
+    schedulePreload();
 
     // Listen for hash changes (back/forward buttons, link clicks)
     window.addEventListener('hashchange', function () {
+      if (suppressNextHashChange) {
+        suppressNextHashChange = false;
+        return;
+      }
       navigate(false);
     });
   });

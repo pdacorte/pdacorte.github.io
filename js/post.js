@@ -8,27 +8,75 @@
 
   var POSTS_DIR = 'blog/posts/';
   var POSTS_JSON = 'blog/posts/posts.json';
+  var DATE_FORMATTER = new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+
+  var postMetaCache = null;
+  var postMetaPromise = null;
+  var markdownCache = {};
+  var markdownPromises = {};
 
   // ---- Format Date ----
   function formatDate(dateStr) {
     var date = new Date(dateStr + 'T00:00:00');
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
+    return DATE_FORMATTER.format(date);
   }
 
   // ---- Fetch post metadata from posts.json ----
+  async function fetchPostMetaList() {
+    if (postMetaCache) return postMetaCache;
+    if (postMetaPromise) return postMetaPromise;
+
+    postMetaPromise = (async function () {
+      try {
+        var response = await fetch(POSTS_JSON);
+        if (!response.ok) return [];
+
+        var posts = await response.json();
+        postMetaCache = posts;
+        return posts;
+      } catch (err) {
+        return [];
+      } finally {
+        postMetaPromise = null;
+      }
+    })();
+
+    return postMetaPromise;
+  }
+
   async function fetchPostMeta(filename) {
     try {
-      var response = await fetch(POSTS_JSON);
-      if (!response.ok) return null;
-      var posts = await response.json();
+      var posts = await fetchPostMetaList();
       return posts.find(function (p) { return p.file === filename; }) || null;
     } catch (err) {
       return null;
     }
+  }
+
+  async function fetchMarkdown(filename) {
+    if (markdownCache[filename]) return markdownCache[filename];
+    if (markdownPromises[filename]) return markdownPromises[filename];
+
+    markdownPromises[filename] = (async function () {
+      try {
+        var response = await fetch(POSTS_DIR + filename);
+        if (!response.ok) {
+          throw new Error('Post not found');
+        }
+
+        var markdown = await response.text();
+        markdownCache[filename] = markdown;
+        return markdown;
+      } finally {
+        delete markdownPromises[filename];
+      }
+    })();
+
+    return markdownPromises[filename];
   }
 
   // ---- Load and render a post ----
@@ -43,24 +91,17 @@
       // Fetch metadata and markdown in parallel
       var results = await Promise.all([
         fetchPostMeta(filename),
-        fetch(POSTS_DIR + filename),
+        fetchMarkdown(filename),
       ]);
 
       var meta = results[0];
-      var mdResponse = results[1];
-
-      if (!mdResponse.ok) {
-        throw new Error('Post not found');
-      }
-
-      var markdown = await mdResponse.text();
+      var markdown = results[1];
 
       // Render markdown using marked.js
       if (typeof marked === 'undefined') {
         throw new Error('Markdown renderer not loaded');
       }
 
-      marked.setOptions({ breaks: false, gfm: true });
       var html = marked.parse(markdown);
 
       // Update page
@@ -118,6 +159,17 @@
     await loadPost(filename);
   }
 
+  function preload() {
+    fetchPostMetaList();
+  }
+
+  if (typeof marked !== 'undefined' && typeof marked.setOptions === 'function') {
+    marked.setOptions({ breaks: false, gfm: true });
+  }
+
   // Expose for the SPA router
-  window.PostPage = { init: init };
+  window.PostPage = {
+    init: init,
+    preload: preload,
+  };
 })();

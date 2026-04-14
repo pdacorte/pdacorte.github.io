@@ -610,6 +610,10 @@ a:hover {
   display: block;
 }
 
+.blog-card-enter {
+  animation: fadeInUp 0.4s ease both;
+}
+
 .blog-card:hover {
   background: var(--bg-card-hover);
   border-color: var(--border-hover);
