@@ -1,7 +1,7 @@
 /**
  * main.js - SPA Router, Theme, Mobile Menu
  *
- * Hash-based routing: #/ (home), #/about, #/blog, #/blog/filename.md
+ * Hash-based routing: #/ (home), #/about, #/projects, #/blog, #/blog/filename.md
  * Page partials are fetched from pages/ directory and injected into #app.
  * After injection, page-specific init functions are called (Blog.init, Post.init).
  */
@@ -62,6 +62,7 @@
    * Examples:
    *   #/           -> { page: 'home', param: null }
    *   #/about      -> { page: 'about', param: null }
+   *   #/projects   -> { page: 'projects', param: null }
    *   #/blog       -> { page: 'blog', param: null }
    *   #/blog?page=2 -> { page: 'blog', param: null, query: 'page=2' }
    *   #/blog/my-post.md -> { page: 'post', param: 'my-post.md' }
@@ -90,6 +91,9 @@
     if (path === '/about') {
       return { page: 'about', param: null, query: query };
     }
+    if (path === '/projects') {
+      return { page: 'projects', param: null, query: query };
+    }
     if (path === '/blog') {
       return { page: 'blog', param: null, query: query };
     }
@@ -110,6 +114,7 @@
     var map = {
       home: 'pages/home.html',
       about: 'pages/about.html',
+      projects: 'pages/projects.html',
       blog: 'pages/blog.html',
       post: 'pages/post.html',
     };
@@ -123,6 +128,7 @@
     var map = {
       home: 'Paulo da Corte - Portfolio',
       about: 'About - Paulo da Corte',
+      projects: 'Projects - Paulo da Corte',
       blog: 'Blog - Paulo da Corte',
       post: 'Blog Post - Paulo da Corte',
     };
@@ -244,7 +250,7 @@
           await window.PostPage.init(route.param);
         }
         break;
-      // home and about are static -- no JS init needed
+      // home, about, and projects are static -- no JS init needed
     }
   }
 
@@ -330,7 +336,7 @@
   }
 
   function preloadPartials() {
-    var pages = ['home', 'about', 'blog', 'post'];
+    var pages = ['home', 'about', 'projects', 'blog', 'post'];
 
     pages.forEach(function (page) {
       fetchPartial(getPartialPath(page)).catch(function () {
